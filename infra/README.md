@@ -13,4 +13,6 @@ The intention is to keep module logic isolated and reusable while environment di
 
 ## Current Status
 
-This directory currently provides structure and documentation only. Terraform resources, variables, outputs, and backend configuration will be implemented in the next phase.
+The `infra/environments/dev` environment now contains the first minimal Terraform implementation for this lab. At this stage it provisions a single Azure Resource Group and establishes the baseline file layout for versions, providers, variables, locals, main resources, outputs, and example variable values.
+
+Additional modules and shared services will be introduced incrementally in later phases.

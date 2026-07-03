@@ -1,6 +1,6 @@
 # How To Deploy
 
-This document provides placeholder deployment steps for the future Terraform implementation of this lab.
+This document provides the initial deployment steps for the current Terraform implementation of this lab.
 
 ## Prerequisites
 
@@ -29,32 +29,47 @@ az account set --subscription "<your-subscription-id>"
 cd infra/environments/dev
 ```
 
-## 4. Initialize Terraform
+## 4. Create a Local Variables File
+
+Copy the example file and adjust the placeholder values locally.
+
+```bash
+cp terraform.tfvars.example terraform.tfvars
+```
+
+On Windows PowerShell, you can use:
+
+```powershell
+Copy-Item terraform.tfvars.example terraform.tfvars
+```
+
+## 5. Initialize Terraform
 
 ```bash
 terraform init
 ```
 
-## 5. Validate the Configuration
+## 6. Validate the Configuration
 
 ```bash
 terraform validate
 ```
 
-## 6. Review the Execution Plan
+## 7. Review the Execution Plan
 
 ```bash
-terraform plan -var="environment=dev"
+terraform plan
 ```
 
-## 7. Apply the Configuration
+## 8. Apply the Configuration
 
 ```bash
-terraform apply -var="environment=dev"
+terraform apply
 ```
 
 ## Notes
 
 - Do not commit real `.tfvars` files containing sensitive values.
 - Do not hardcode subscription IDs, tenant IDs, client secrets, or credentials in this repository.
-- Additional deployment steps may be added once modules and providers are implemented.
+- The current scope creates only the base Azure Resource Group for the `dev` environment.
+- Additional deployment steps will be added as more modules and resources are implemented.

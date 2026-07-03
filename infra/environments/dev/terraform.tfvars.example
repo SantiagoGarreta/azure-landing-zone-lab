@@ -1,0 +1,7 @@
+project_name = "alz-mini"
+environment  = "dev"
+location     = "eastus"
+owner        = "your-name"
+cost_center  = "portfolio"
+
+tags = {}
