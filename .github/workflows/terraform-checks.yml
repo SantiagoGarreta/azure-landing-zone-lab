@@ -29,13 +29,13 @@ jobs:
         run: terraform validate
 
       - name: TODO tflint
-        run: echo "TODO: add tflint once Terraform configuration is implemented"
+        run: 'echo "TODO: add tflint once Terraform configuration is implemented"'
 
       - name: TODO Trivy config
-        run: echo "TODO: add Trivy config scanning once Terraform configuration is implemented"
+        run: 'echo "TODO: add Trivy config scanning once Terraform configuration is implemented"'
 
       - name: TODO Checkov
-        run: echo "TODO: add Checkov scanning once Terraform configuration is implemented"
+        run: 'echo "TODO: add Checkov scanning once Terraform configuration is implemented"'
 
       - name: TODO Terraform plan
-        run: echo "TODO: add terraform plan when Azure credentials and Terraform resources are ready"
+        run: 'echo "TODO: add terraform plan when Azure credentials and Terraform resources are ready"'
