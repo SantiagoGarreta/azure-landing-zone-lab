@@ -1,0 +1,41 @@
+name: Terraform Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  terraform-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive
+
+      - name: Terraform init
+        working-directory: infra/environments/dev
+        run: terraform init -backend=false
+
+      - name: Terraform validate
+        working-directory: infra/environments/dev
+        run: terraform validate
+
+      - name: TODO tflint
+        run: echo "TODO: add tflint once Terraform configuration is implemented"
+
+      - name: TODO Trivy config
+        run: echo "TODO: add Trivy config scanning once Terraform configuration is implemented"
+
+      - name: TODO Checkov
+        run: echo "TODO: add Checkov scanning once Terraform configuration is implemented"
+
+      - name: TODO Terraform plan
+        run: echo "TODO: add terraform plan when Azure credentials and Terraform resources are ready"

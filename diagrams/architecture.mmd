@@ -1,0 +1,29 @@
+flowchart LR
+    engineer[User / Engineer]
+    gha[GitHub Actions Pipeline]
+    tf[Terraform]
+
+    subgraph azure[Azure Resource Group]
+        subgraph vnet[Virtual Network]
+            subnet1[Subnet A]
+            subnet2[Subnet B]
+            nsg[Network Security Group]
+        end
+
+        kv[Azure Key Vault]
+        acr[Azure Container Registry]
+        la[Log Analytics Workspace]
+        mi[Managed Identity]
+        rbac[RBAC Assignments]
+    end
+
+    engineer --> gha
+    gha --> tf
+    tf --> azure
+    nsg --> subnet1
+    nsg --> subnet2
+    mi --> kv
+    mi --> acr
+    rbac --> mi
+    kv --> la
+    acr --> la
